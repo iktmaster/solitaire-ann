@@ -104,20 +104,19 @@ if (USE_SAVED_MODEL):
     print("Loading weights...")
     model = loadModel(model_fname)
 else:
-    for i in range(5):
-        for part in range(parts):
-            X_train = []
-            Y_train = []
-            print("Running over dataset part", part+1, "/", parts)
-            print("Grabbing data...")
-            data = getData(part)
-            print("Make training data...")
-            makeTrainingSet(data)
+    for part in range(parts):
+        X_train = []
+        Y_train = []
+        print("Running over dataset part", part+1, "/", parts)
+        print("Grabbing data...")
+        data = getData(part)
+        print("Make training data...")
+        makeTrainingSet(data)
 
-            #transformed_label = keras.utils.to_categorical(Y_train, num_classes=615)
+        #transformed_label = keras.utils.to_categorical(Y_train, num_classes=615)
 
-            print("Fitting the model...")
-            fitDaModal(np.array(X_train), np.array(Y_train))
+        print("Fitting the model...")
+        fitDaModal(np.array(X_train), np.array(Y_train))
     saveModel(model, model_fname)
 
 def run_prediction():

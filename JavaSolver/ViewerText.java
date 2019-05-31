@@ -24,7 +24,7 @@ public class ViewerText implements ViewerInterface {
 	//  Open
 	//-----------------------------------------------------------------
 	public void open (int number) throws IOException {
-		String name = "firstmove/output" + number + ".txt";
+		String name = "wins/output" + number + ".txt";
 		System.out.println(name);
 		//File file = new File(name, "UTF-8");
 		//file.createNewFile();

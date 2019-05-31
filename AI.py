@@ -49,8 +49,6 @@ def fitDaModal(x, y):
         np.array(y),
         epochs=EPOCHS,
         verbose=1,
-        batch_size=40,
-        #validation_split = 0.20,
         callbacks=[tensorboard])
 
 def makeTrainingSet(data):
@@ -59,10 +57,7 @@ def makeTrainingSet(data):
         xtrain = [i+1 for i in xtrain]
         xtrain_categorical = keras.utils.to_categorical(xtrain, num_classes=54)
         xtrain_categorical = np.array(xtrain_categorical).flatten()
-        #print(len(xtrain_categorical))
         ytrain = d[-1:]
-        #strain = str(ytrain[-3]) + "," + str(ytrain[-2]) + "," + str(ytrain[-1]) + ""
-        #strain = str(ytrain[-2]) + "," + str(ytrain[-1]) + ""
         X_train.append(xtrain_categorical)
         Y_train.append(ytrain)
 
